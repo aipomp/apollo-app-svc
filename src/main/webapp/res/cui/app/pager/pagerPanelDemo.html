@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>    
+<title>分页组件pager demo页</title>   
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/Pager.css" rel="stylesheet" type="text/css" />   
+<script type="text/javascript" src="../../../jquery/jquery-1.6.4.min.js"></script>
+<script src="pagerPanel.js" type="text/javascript"></script>  
+<script src="pagerPanelDemo.js" type="text/javascript"></script>
+</head>
+	<body>
+	<h3 style="font-size: 20px;color: black;margin-top: 20px;margin-left: 10px;">分页组件PagerPanel Demo</h3>
+	<!-- 组件调用start -->
+	<div class="clearfix pt10 pb10">
+		<div class="pagePanel fl">
+			<div id="pager" ></div>
+		</div>
+	</div>
+	<!-- 组件调用end -->
+	<div style="font-size: 15px;color: black;margin-top: 30px;margin-left: 10px;margin-right:10px;background-color: #EEEEFF;">
+		显示数据结果 <span id='startIndexNum'></span>-<span id='endIndexNum'></span>
+	</div>
+	<div style="font-size: 15px;color: black;margin-top: 50px;margin-left: 10px;">
+		<table>
+			<tr>
+				<td><label>总数（totalCount）：</label>
+				</td>
+				<td><input id="totalCountText" type="text"/>
+				</td>
+			</tr>
+			<tr>
+				<td><label>每页容量（pageSize）：</label>
+				</td>
+				<td><input id="pageSizeText" type="text"/>
+				</td>
+			</tr>
+		</table>
+		<input type="button" value="设置" onclick="query()" />
+	</div>
+	</body>
+</html>
