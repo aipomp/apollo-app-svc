@@ -5,16 +5,16 @@ var actionQuery = rootPath + "/demo/test";
 Ext.onReady(function(){ 
 	$.ajax({
 		url : actionQuery + "/getCompDesc",
-		method:"GET",
+		type : "POST",
 		data:{
-			
+			compInstId : 1000004,
+			name : "中文参数"
 		},
 		cache:false,
 		async:false,
 		success:function(response){
 			if(response!=null&&response!="[]"){
 				$("#test_span").html(response);
-				alert($("#test_span").html())
 			}
 		},
 		error:function(response){

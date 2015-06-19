@@ -28,9 +28,11 @@ public class MyBatisTest {
 
 	@Test
 	public void testGetCompInst() {
-		long compInstId = 1000096;
+		long compInstId = 1000004;
 		CompInst compInst = compInstService.selectByPrimaryKey(compInstId);
-		log.info("组件名称：" + compInst.getCompInstDesc());
+		if(compInst != null){
+			log.info("组件名称：" + compInst.getCompInstDesc());
+		}
 
 	}
 }
