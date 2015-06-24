@@ -13,6 +13,7 @@
 	http://www.springframework.org/schema/context      
 	http://www.springframework.org/schema/context/spring-context-3.2.xsd   
 ">
+	
 	<!-- 引入database.properties属性文件 -->
     <context:property-placeholder location="classpath:database.properties" />
     
@@ -69,6 +70,24 @@
         UserMapper.xml位于com.apollo.appsvc.baseapi.*.mapper包下，这样UserMapper.xml就可以被自动扫描
          -->
         <property name="mapperLocations" value="classpath*:com/apollo/appsvc/baseapi/*/mapper/*.xml" />
+        
+        
+        <!-- 分页开始 -->
+        <property name="typeAliasesPackage" value="com.apollo.appsvc.*.bean"/>
+	    <property name="plugins">
+	      <array>
+	        <bean class="com.github.pagehelper.PageHelper">
+	          <property name="properties">
+	            <value>
+	              dialect=mysql
+	              rowBoundsWithCount=true
+	              params=pageNum=start;pageSize=limit;
+	            </value>
+	          </property>
+	        </bean>
+	      </array>
+	    </property>
+	    <!-- 分页结束 -->
     </bean>
     <!-- 配置扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
