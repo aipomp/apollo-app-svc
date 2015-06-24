@@ -46,7 +46,8 @@ public class DemoController extends BaseController{
 	}
 	
 	@RequestMapping(value="/updateInfo")
-	@SystemControllerLog(description = "查询用户")
+	@SystemControllerLog(module = "示例", operateName = SystemControllerLog.Operate.UPDATE, description = "更新用户",
+						className = "DemoController", methodName="update")
 	public void update(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		log.debug("DemoController.update ...");
 		logService.update();

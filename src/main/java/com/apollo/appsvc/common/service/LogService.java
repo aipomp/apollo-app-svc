@@ -2,22 +2,31 @@ package com.apollo.appsvc.common.service;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.apollo.appsvc.common.bean.Log;
+import com.apollo.appsvc.common.bean.SystemLog;
 
 public interface LogService {
-    /** 
-     * 日志记录 
-     * @param log 
-     */  
-    @Transactional  
-    public void log(Log log);  
-      
-    /** 
-     * 获取登录管理员ID 
-     */  
-    public Long loginUserId();
+
+    @Transactional
+    public void logCallBefore(SystemLog log) throws Exception;
     
-    public void insert();
+    @Transactional
+    public void logCallAfter(SystemLog log) throws Exception;
     
-    public void update();
+    @Transactional
+    public void logAfterReturning(SystemLog log) throws Exception;
+    
+    @Transactional
+    public void logAfterThrowing(SystemLog log) throws Exception;
+    
+    @Transactional
+    public void insert() throws Exception;
+    
+    @Transactional
+    public void update() throws Exception;
+    
+    @Transactional
+    public void delete() throws Exception;
+    
+    @Transactional
+    public void query() throws Exception;
 }
