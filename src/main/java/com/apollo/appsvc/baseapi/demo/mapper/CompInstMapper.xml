@@ -42,6 +42,14 @@
     from COMP_INST
     where COMP_INST_ID = #{compInstId,jdbcType=DECIMAL}
   </select>
+  <!-- 测试分页用 -->
+  <select id="selectAll" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from COMP_INST 
+  </select>
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     <!--
       WARNING - @mbggenerated
