@@ -52,7 +52,7 @@
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
     
-    <!-- 日志文件存储路径初始化  
+    <!-- 日志文件存储路径初始化  -->
     <servlet>  
         <servlet-name>LogFileSavePathServlet</servlet-name>  
         <display-name>LogFileSavePathServlet</display-name>  
@@ -63,7 +63,7 @@
       <servlet-mapping>  
         <servlet-name>LogFileSavePathServlet</servlet-name>  
         <url-pattern>/LogFileSavePathServlet</url-pattern>  
-    </servlet-mapping>  -->
+    </servlet-mapping>  
     
     <!-- 激活Tomcat的defaultServlet来处理静态文件 -->
     <servlet-mapping>
