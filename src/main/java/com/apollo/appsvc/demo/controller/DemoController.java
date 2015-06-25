@@ -14,6 +14,7 @@ import com.apollo.appsvc.common.annotation.SystemControllerLog;
 import com.apollo.appsvc.common.annotation.SystemServiceLog;
 import com.apollo.appsvc.common.controller.BaseController;
 import com.apollo.appsvc.common.service.LogService;
+import com.apollo.appsvc.common.service.MailService;
 import com.apollo.appsvc.demo.service.CompInstService;
 
 @Controller
@@ -27,6 +28,8 @@ public class DemoController extends BaseController{
 	@Autowired
 	private LogService logService;
 	
+	@Autowired
+	private MailService mailService;
 	
 	@RequestMapping(value="/getCompDesc")
 	public void startStopActivity(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -51,5 +54,10 @@ public class DemoController extends BaseController{
 	public void update(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		log.debug("DemoController.update ...");
 		logService.update();
+	}
+	
+	@RequestMapping(value="/sendmail")
+	public void sendmail(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		mailService.sendTextMail("heero_rei@163.com", "这是一封测试邮件", "测试邮件内容");
 	}
 }

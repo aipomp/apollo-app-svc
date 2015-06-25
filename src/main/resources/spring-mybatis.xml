@@ -15,7 +15,7 @@
 ">
 	
 	<!-- 引入database.properties属性文件 -->
-    <context:property-placeholder location="classpath:database.properties" />
+    <context:property-placeholder location="classpath:database.properties,classpath:mail.properties" />
     
     <!-- JNDI方式配置数据源 -->
     <!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> <property name="jndiName" value="${jndiName}"></property> </bean> -->
